@@ -112,3 +112,14 @@ bot.on("message", (message)=>{
     }
 });
 bot.login(token);
+const activities_list = [
+    "Разговоры посетителей",
+    "Байку про клад",
+    "Легенду о самурае"
+];
+bot.on('ready', () => {
+    bot.user.setStatus('available')
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+        bot.user.setActivity(activities_list[index], { type: 'LISTENING' });
+    }, 10000)});
