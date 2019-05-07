@@ -111,6 +111,7 @@ bot.on("message", (message)=>{
      message.channel.send(exampleEmbed);
     }
 });
+
 bot.login(token);
 const activities_list = [
     "Разговоры посетителей",
