@@ -24,3 +24,14 @@ module.exports.run = async (bot,message,args) => {
 module.exports.help = {
     name: "ban"
 };
+const activities_list = [
+    "Интересную историю",
+    "История создания коньяка",
+    "by Genkail"
+];
+bot.on('ready', () => {
+    bot.user.setStatus('available')
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+        bot.user.setActivity(activities_list[index], { type: 'LISTENING' });
+    }, 10000);
