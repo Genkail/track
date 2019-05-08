@@ -5,23 +5,13 @@ const bot = new Discord.Client();
 const frames = [
 
 '(-°□°)- ┬─┬',
-  
-'(-°□°)- ┬─┬',
 
-'(╯°□°)╯ ]',
-  
 '(╯°□°)╯ ]',
 
 '(╯°□°)╯ ︵ ┻━┻',
-  
-'(╯°□°)╯ ︵ ┻━┻',
 
 '(╯°□°)╯ [',
-  
-'(╯°□°)╯ [',
 
-'(╯°□°)╯ ┬─┬'
-  
 '(╯°□°)╯ ┬─┬'
 
 ];
@@ -46,5 +36,19 @@ return message;
 
 module.exports.help= {
 
-name: "tf"
+name: "atableflip"
 } 
+hotboi.01.05.2019
+////emote-v2
+    var args = args.join(" ")
+     if(!args) return;
+    var emoji = client.emojis.find(x => x.name.includes(args))
+    if(!emoji) return;
+    var id = emoji.id
+    var name = client.emojis.find(x => x.id == id).name
+    var gif = emoji.animated
+    if(!gif){
+    message.channel.send(`<:${name}:${id}>`)
+    }else{
+    message.channel.send(`<a:${name}:${id}>`)
+    }
