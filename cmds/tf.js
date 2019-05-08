@@ -36,7 +36,7 @@ return message;
 
 module.exports.help= {
 
-name: "atableflip"
+name: "tf"
 } 
 hotboi.01.05.2019
 ////emote-v2
