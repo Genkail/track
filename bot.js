@@ -123,7 +123,7 @@ bot.on('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
         bot.user.setActivity(activities_list[index], { type: 'LISTENING' });
-    }, 10000)});
+    }, 600000)});
     bot.on('guildMemberAdd', member => { 
         var channel = member.guild.channels.get('575237525455765514')
         channel.send(`**Приветствую тебя**${member}, надеюсь, тебе у нас понравится! `)
