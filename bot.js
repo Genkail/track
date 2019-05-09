@@ -149,9 +149,6 @@ if(message.content.indexOf('discord.gg') != -1){
             guild:message.guild.id,
             time:60000
         };
-        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+       fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
             if(err) console.log(err);
         });
-    
-        author.addRole(role);
-}})
