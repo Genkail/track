@@ -133,4 +133,23 @@ if(message.content.indexOf('discord.gg') != -1){
         message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
         }
+    bot.on("message", (message)=>{
+if(message.content.indexOf('discord.gg') != -1){
+        let logs = message.guild.channels.find(r => r.name === "logs");
+        if(!logs) return bot.send('Создайте канал #logs');
+        if(!message.member.hasPermission("MANAGE_MESSAGES")){    
+        message.channel.bulkDelete(1)
+        let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
+        message.member.addRole(muteRolez);
+        logs.send(`${message.author}\n${message.content}`)
+        channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
+        }
+        bot.mutes[author.id] = {
+            guild:message.guild.id,
+            time:6000
+        };
+        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+            if(err) console.log(err);
+        });
+}})
 }})
