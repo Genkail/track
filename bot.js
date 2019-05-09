@@ -124,7 +124,7 @@ bot.on('ready', () => {
         member.send(`Добро пожаловать в Таверну! просьба ознакомится с правилами в одноименном канале)`)  //Бот будет в ЛС писать "Добро пожаловать"
     })
 
-if(message.content.indexOf('discord.js') != -1){
+if(message.content.indexOf('discord.gg') != -1){
         let logs = message.guild.channels.find(r => r.name === "logs");
         if(!logs) return bot.send('Создайте канал #logs');
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
