@@ -133,4 +133,4 @@ if(message.content.indexOf('discord.gg') != -1){
         message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
         }
-}   
+}})
