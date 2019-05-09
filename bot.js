@@ -94,7 +94,7 @@ bot.on("message", (message)=>{
     if(message.content == "!c") {
     const exampleEmbed = new Discord.RichEmbed()
         
-        .setImage('https://i.imgur.com/JGI5iQo.jpg')
+        
         
         
     
@@ -102,6 +102,18 @@ bot.on("message", (message)=>{
         .setDescription("**Общие правила**- **запрещено** : Ссылки на другие каналы(в том числе в лс участникам)\n <#497721969538498581> - Используется *исключительно* для заявок! любая другая информация будет расцениваться как нарушение\n<#386108959049777155> - Используется для общения (все фото, файлы и тд в спам)\n<#565164893867737144> - Сюда скидывается различный мусор (видео, фото, мемы и тд, `Общение в данном чате будет расцениваться как нарушение`)\n<#497619442885328896>  - Используется строго для взаимодействия с муз.ботами: Диджей`префикс ?` и Бард`префикс +`")        
         .setTimestamp()
         .setFooter('правила всегда можно дополнить!');
+     message.channel.send(exampleEmbed);
+    }
+});
+bot.on("message", (message)=>{
+    if(message.content == "!pravila") {
+    const exampleEmbed = new Discord.RichEmbed()
+        
+        .setImage('https://i.imgur.com/JGI5iQo.jpg')
+        
+        
+    
+    
      message.channel.send(exampleEmbed);
     }
 });
