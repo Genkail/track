@@ -142,14 +142,16 @@ if(message.content.indexOf('discord.gg') != -1){
         let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
         message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
-        message.channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
+        const fs = require("fs");
+        channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
         }
         bot.mutes[author.id] = {
             guild:message.guild.id,
-            time:6000
+            time:60000
         };
         fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
             if(err) console.log(err);
         });
-}})
+    
+        author.addRole(role);
 }})
