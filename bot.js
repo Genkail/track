@@ -108,6 +108,7 @@ bot.on("message", (message)=>{
 bot.on("message", (message)=>{
     if(message.content == "!pravila") {
     const exampleEmbed = new Discord.RichEmbed()
+    .setcolor('#36393E')
         
         .setImage('https://i.imgur.com/JGI5iQo.jpg')
         
