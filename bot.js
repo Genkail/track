@@ -94,7 +94,7 @@ bot.on("message", (message)=>{
     if(message.content == "!c") {
     const exampleEmbed = new Discord.RichEmbed()
         
-        .setTitle('https://i.imgur.com/JGI5iQo.jpg')
+        .setImage('https://i.imgur.com/JGI5iQo.jpg')
         
         
     
