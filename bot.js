@@ -142,7 +142,7 @@ if(message.content.indexOf('discord.gg') != -1){
         let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
         message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
-        channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
+        message.channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
         }
         bot.mutes[author.id] = {
             guild:message.guild.id,
