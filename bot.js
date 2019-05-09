@@ -123,7 +123,7 @@ bot.on('ready', () => {
         channel.send(`**Приветствую тебя**${member}, надеюсь, тебе у нас понравится! `)
         member.send(`Добро пожаловать в Таверну! просьба ознакомится с правилами в одноименном канале)`)  //Бот будет в ЛС писать "Добро пожаловать"
     })
-
+bot.on("message", (message)=>{
 if(message.content.indexOf('discord.gg') != -1){
         let logs = message.guild.channels.find(r => r.name === "logs");
         if(!logs) return bot.send('Создайте канал #logs');
