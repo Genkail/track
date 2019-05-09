@@ -143,5 +143,5 @@ if(message.content.indexOf('discord.gg') != -1){
          message.channel.send(`Игрок ${author} замучен на за рекламу Discord сервера`)
         message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
-        }
+        }})
 }   
