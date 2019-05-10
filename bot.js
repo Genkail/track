@@ -134,7 +134,7 @@ bot.on('ready', () => {
     bot.on('guildMemberAdd', member => { 
         var channel = member.guild.channels.get('575237525455765514')
         channel.send(`**Приветствую тебя**${member}, надеюсь, тебе у нас понравится! `)
-        member.send(`Добро пожаловать в Таверну! просьба ознакомится с правилами в одноименном канале)`)  //Бот будет в ЛС писать "Добро пожаловать"
+        member.send(`Добро пожаловать в Таверну! просьба ознакомится с <#533914378227941376>`)  //Бот будет в ЛС писать "Добро пожаловать"
     })
 bot.on("message", (message)=>{
 if(message.content.indexOf('discord.gg') != -1){
