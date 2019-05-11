@@ -152,7 +152,7 @@ bot.on("message", (message)=>{
 });
 bot.on("message", (message)=>{
     if(message.content == "!modhelp") {
-if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У вас нет прав");
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ты не бармен, так что нельзя");
     const exampleEmbed = new Discord.RichEmbed()
         
         
