@@ -149,7 +149,21 @@ bot.on("message", (message)=>{
      message.channel.send(exampleEmbed);
     }
 });
-
+bot.on("message", (message)=>{
+    if(message.content == "!modhelp") {
+    const exampleEmbed = new Discord.RichEmbed()
+        
+        
+        .setColor('RANDOM')
+        
+        .setTitle('**СПРАВКА ДЛЯ МОДЕРАЦИИ**')
+    
+        .setDescription("```ini\n[тут должна быть фраза про ответственность... но ее не будет :D]\n```\n **__КОМАНДЫ__**\n ```ini[!warn ник игрока] - выдает предупреждение игроку (P.S 3 предупреждения - автокик)\n [!kick ник игрока] - Кикает игрока\n [!mute ник игрока n] - выдает мут(P.S где n - время мута в секундах)\n [!say] - сказать от имени бота\n[!clear n] удалить n ое кол-во сообщений\n```")        
+        .setTimestamp()
+        .setFooter('функции warn и kick недоступны во время испытательного периода!, чтобы снять `mute` или `warn` добавь un `unwarn, unmute`');
+     message.channel.send(exampleEmbed);
+    }
+});
 
 bot.login(token);
 const activities_list = [
