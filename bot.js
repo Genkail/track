@@ -168,7 +168,7 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send
     }
 });
 bot.on("message", (message)=>{
-    if(message.content == "!pravo") {
+    if(message.content == "!nakaz") {
     const exampleEmbed = new Discord.RichEmbed()
         
         
