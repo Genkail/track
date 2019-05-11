@@ -107,7 +107,8 @@ bot.on("message", (message)=>{
     }
 });
 bot.on("message", (message)=>{
-    if(message.content == "!rofl") {
+    if(message.content == "!rofl") { 
+
     const exampleEmbed = new Discord.RichEmbed()
         
         
@@ -151,6 +152,7 @@ bot.on("message", (message)=>{
 });
 bot.on("message", (message)=>{
     if(message.content == "!modhelp") {
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У вас нет прав");
     const exampleEmbed = new Discord.RichEmbed()
         
         
