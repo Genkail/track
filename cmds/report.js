@@ -15,8 +15,6 @@ module.exports.run = async (bot, message, args) => {
     .addField("📢Канал", message.channel)
     .addField("📄Причина", rreason)
 
-    message.channel.send(embed).then(msg => msg.delete());
-
     let okaydm = new Discord.RichEmbed()
         .setColor('#800080')
         .addField(`Совсем скоро администрация нашего сервера, рассмотрит жалобу на`, `${rUser.user.tag}`)
@@ -26,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     if(!reportschannel) return message.channel.send("Не удалось найти канал для отчетов");
 
 
-    message.delete().catch(O_o=>{});
+    );
     reportschannel.send(embed);
 
 }
