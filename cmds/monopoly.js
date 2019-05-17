@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 
     let embed = new Discord.RichEmbed()
     .setColor('#800080')
-    .setTitle('**БРЕДОВУХА**')
+    .setTitle('**МОНОПОЛИЯ**')
     .addField("Начало в:",time)
     .addField("Ведущий", `${rUser}`)
     
