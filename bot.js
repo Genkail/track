@@ -227,3 +227,10 @@ if(message.content.indexOf('discord.gg') != -1){
         logs.send(`${message.author}\n${message.content}`)
         }
 }})
+async function test1() {
+    bot.channels.find(c => c.id === "578938585022201876").setName(`🌚Всего участников: ${bot.guilds.get('386108959049777152').members.size}`);
+    bot.channels.find(c => c.id === "578938479283666972").setName(`👥Людей: ${bot.guilds.get('386108959049777152').members.filter(mem => !mem.user.bot === true).size}`);
+    bot.channels.find(c => c.id === "578938926363050004").setName(`👽Ботов: ${bot.guilds.get('386108959049777152').members.filter(mem => mem.user.bot === true).size}`);
+    bot.channels.find(c => c.id === "578938430994513921").setName(`🌝В сети: ${bot.guilds.get('386108959049777152').presences.size}`);
+}; setInterval(test1, 3000)
+
