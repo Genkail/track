@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Не удалось найти пользователя.");
     
-    let time = args.slice(2).join(" ");
+    let time = args.slice(1).join(" ");
     if(!time) return message.channel.send("вы не указали время");
 
 
