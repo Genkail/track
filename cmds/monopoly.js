@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Начало в:",time)
     .addField("Ведущий", `${rUser}`)
     
-    .setDescription("Монополия... будь монополистом! cоздай свою империю...и сломай ее тут же.\nСайт для игры monopoly-one.com \nКомната ивента https://discord.gg/bUkp9zU")
+    .setDescription("Монополия... будь монополистом! cоздай свою империю...и сломай ее тут же.\nСайт для игры https://monopoly-one.com \nКомната ивента https://discord.gg/bUkp9zU")
    
     .setImage("https://thumbs.gfycat.com/ConventionalDifficultCottontail-size_restricted.gif")
 
