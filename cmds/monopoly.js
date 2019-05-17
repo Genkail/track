@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     
     .setDescription("Монополия... будь монополистом! cоздай свою империю...и сломай ее тут же.\nСайт для игры monopoly-one.com \nСобираемся тут https://discord.gg/JsZUuGn (P.S позже перейдем в лс звонок)")
    
-    .setImage("https://im0-tub-ru.yandex.net/i?id=98c1b1539b07ec7dc6f1a93dcc004f14&n=13")
+    .setImage("https://thumbs.gfycat.com/ConventionalDifficultCottontail-size_restricted.gif")
 
 let rpchannel = message.guild.channels.find('name', '🎉ивенты')
 if(!rpchannel) return message.channel.send("Не удалось найти канал");
