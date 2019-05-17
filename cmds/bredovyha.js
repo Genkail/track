@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 
     .setDescription("Игра, в которой надо придумывать ложные варианты ответа и одновременно искать правдивые.\nСайт для игры https://jackbox.fun \nСобираемся тут https://discord.gg/JsZUuGn (P.S позже перейдем в лс звонок)")
     .addField("Код для участия", rreason)
-    .setImage("https://jackbox.whatif.one/wp-content/uploads/2017/12/FibbageEAY_logo_post-750x410.jpg")
+    .setImage("https://jackbox.whatif.one/wp-content/uploads/2019/02/BannerFibbage3-750x410.png")
 
 let rpchannel = message.guild.channels.find('name', '🎉ивенты')
 if(!rpchannel) return message.channel.send("Не удалось найти канал");
