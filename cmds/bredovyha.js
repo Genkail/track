@@ -6,9 +6,9 @@ module.exports.run = async (bot, message, args) => {
     if(!args[0]) return bot.send("Вы не указали Ведущего");
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Не удалось найти пользователя.");
-    let rreason = args.join(" ").slice(22);
-    if(!rreason) return message.channel.send("вы не указали Код");
-    let time = args.join(" ").slice(23);
+    let cod = args.join(" ").slice(1);
+    if(!cod) return message.channel.send("вы не указали Код");
+    let time = args.join(" ").slice(2);
     if(!time) return message.channel.send("вы не указали время");
 
 
