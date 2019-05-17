@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('**БРЕДОВУХА**')
     .addField("Ведущий", `${rUser}`)
 
-    .setDescription("Это комедийная игра  в которой вы кучей разных способов сможете манипулировать мнениями своих друзей! Как можно догадаться из названия, действие происходит в нашем собственном маленьком интернете.\nСайт для игры https://jackbox.fun \nСобираемся тут https://discord.gg/JsZUuGn (P.S позже перейдем в лс звонок)")
+    .setDescription("Игра, в которой надо придумывать ложные варианты ответа и одновременно искать правдивые.\nСайт для игры https://jackbox.fun \nСобираемся тут https://discord.gg/JsZUuGn (P.S позже перейдем в лс звонок)")
     .addField("Код для участия", rreason)
     .setImage("https://jackbox.whatif.one/wp-content/uploads/2019/02/BannerFibbage3-750x410.png")
 
