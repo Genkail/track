@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Начало в:",time)
     .addField("Ведущий", `${rUser}`)
     
-    .setDescription("Задача Маньяка найти всех до истечения времени, задача жертв выжить!.\n<@&578944823302815745>\nИграем в локальном лобби \nКомната ивента https://discord.gg/sG4yTrj")
+    .setDescription("**Задача Маньяка**: найти всех __до__ истечения времени!\n**Задача жертв**: ВЫЖИТЬ!.\n<@&578944823302815745>\nИграем в локальном лобби \nКомната ивента https://discord.gg/sG4yTrj")
    
     .setImage("https://i.ytimg.com/vi/cQvFG3L2lDU/maxresdefault.jpg")
 
