@@ -222,21 +222,15 @@ if(message.content.indexOf('discord.gg') != -1){
         if(!logs) return bot.send('Создайте канал #logs');
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
         message.channel.bulkDelete(1)
-        module.exports.run = async (bot,message,args) => {
-            
-            let role = message.guild.roles.find(r => r.name === "Muted");
-            
-                bot.mutes[rUser.id] = {
-                guild:message.guild.id,
-                time:parseInt(Date.now() + (4000)),
-            };
-            fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
-                if(err) console.log(err);
-            });
-        
-            rUser.addRole(role);
+        let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
+        bot.mutes[rUser.id] = {
+            guild:message.guild.id,
+            time:parseInt(Date.now() + (1*1000)),
         };
-
+        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+            if(err) console.log(err);
+        });
+        message.member.addRole(muteRolez);
         logs.send(`${message.author}\n${message.content}`)
         }
 }})
