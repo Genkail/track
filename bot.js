@@ -19,6 +19,16 @@ fs.readdir('./cmds/',(err,files)=>{
     });
 });
 
+function report(message, reason, time) {
+    let embed = new Discord.RichEmbed()
+        .setColor('#800080')
+        .addField("📕Нарушитель", `${message.author} with ID: ${message.author.id}`)
+        .addField("📢Канал", message.channel)
+        .addField("📄Причина", reason )
+        .addField("Время мута", time);
+        let rpchannel = message.guild.channels.find('name', '🚫наказания')
+        rpchannel.send(embed)
+    }
 
 bot.on('ready', () => {
     console.log(`Запустился бот ${bot.user.username}`);
@@ -216,20 +226,22 @@ bot.on('ready', () => {
         channel.send(`**Приветствую тебя**${member}, надеюсь, тебе у нас понравится! `)
         member.send(`Добро пожаловать в Таверну! просьба ознакомится с <#533914378227941376>`)  //Бот будет в ЛС писать "Добро пожаловать"
     })
-bot.on("message", (message)=>{
-if(message.content.indexOf('discord.gg') != -1){
-        let logs = message.guild.channels.find(r => r.name === "logs");
-        if(!logs) return bot.send('Создайте канал #logs');
-        if(!message.member.hasPermission("MANAGE_MESSAGES")){    
-        message.channel.bulkDelete(1);
-        let role= message.guild.roles.find(r => r.name === 'Muted')
-        message.guild.member(message.author).addRole(role.id);
-        logs.send(`${message.author}\n${message.content}`)
-        setTimeout(() => {
-                    message.guild.member(message.author).removeRole(role.id);
-        },5000)
-        }
-}})
+    bot.on("message", (message)=>{
+        if(message.content.indexOf('discord.gg') != -1){
+                let logs = message.guild.channels.find(r => r.name === "logs");
+                if(!logs) return bot.send('Создайте канал #logs');
+                if(!message.member.hasPermission("MANAGE_MESSAGES")){    
+                message.channel.bulkDelete(1);
+                let role= message.guild.roles.find(r => r.name === 'Muted')
+                message.guild.member(message.author).addRole(role.id);
+                logs.send(`${message.author}\n${message.content}`)
+                report(message, "[2.7]Реклама", "30 Минут");
+                setTimeout(() => {
+                            message.guild.member(author.user).removeRole(role.id);
+                },60 * 30 * 1000)
+                }
+        }})
+
 async function test1() {
     bot.channels.find(c => c.id === "578938585022201876").setName(`🌚Всего участников: ${bot.guilds.get('386108959049777152').members.size}`);
     bot.channels.find(c => c.id === "578938479283666972").setName(`👥Людей: ${bot.guilds.get('386108959049777152').members.filter(mem => !mem.user.bot === true).size}`);
@@ -250,6 +262,41 @@ bot.on("message", (message)=>{
             message.channel.send(`Участнику ${message.author} Выдана роль <@&578944823302815745>`)
            
     }})
+    
+var foo = {};
+bot.on("message",(message)=>{
+    let BotR = message.guild.roles.find(r => r.name === 'Бот');
+    if(message.channel.id=="565164893867737144") return;
+    if(message.member.roles.has(BotR.id))return;
+    
+    if(!foo[message.author.id]) { foo[message.author.id] = 0; }
+  if(!message.guild.member(message.author).roles.find(r => r.name == "Muted")){
+    foo[message.author.id]++;
+  setTimeout(()=>{
+    foo[message.author.id]--;
+  },10000);
+  
+
+  if(foo[message.author.id] == 3){
+    message.channel.send(`${message.author}, Прекратите спамить`)
+
+  }
+  let roleS = message.guild.roles.find(r => r.name === "Muted");
+  if(foo[message.author.id] == 6){
+    message.channel.bulkDelete(foo[message.author.id])
+          let role = message.guild.roles.find(r => r.name === "Muted");
+          message.member.addRole(roleS); 
+             
+         setTimeout(() => {
+            message.guild.member(author.user).removeRole(roleS.id);
+         },30 * 60 * 1000)
+   
+         report(message, "[1.1]Спам", "30 Минут");
+    
+  }
+  }
+  });
 
 
 
+ 
