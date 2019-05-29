@@ -223,10 +223,10 @@ if(message.content.indexOf('discord.gg') != -1){
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
         message.channel.bulkDelete(1);
         let role= message.guild.roles.find(r => r.name === 'Muted')
-        message.guild.member(author.user).addRole(role.id);
+        message.guild.member(message.author).addRole(role.id);
         logs.send(`${message.author}\n${message.content}`)
         setTimeout(() => {
-                    message.guild.member(author.user).removeRole(role.id);
+                    message.guild.member(message.author).removeRole(role.id);
         },5000)
         }
 }})
