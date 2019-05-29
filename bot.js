@@ -219,6 +219,7 @@ bot.on('ready', () => {
 bot.on("message", (message)=>{
 if(message.content.indexOf('discord.gg') != -1){
         let logs = message.guild.channels.find(r => r.name === "logs");
+let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!logs) return bot.send('Создайте канал #logs');
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
         message.channel.bulkDelete(1)
