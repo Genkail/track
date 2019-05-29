@@ -221,21 +221,15 @@ if(message.content.indexOf('discord.gg') != -1){
         let logs = message.guild.channels.find(r => r.name === "logs");
         if(!logs) return bot.send('Создайте канал #logs');
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
-        message.channel.bulkDelete(1)
-        let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
-        module.exports.run = async (bot,message,args) => {
-      let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));        
-        bot.mutes[rUser.id] = {
-            guild:message.guild.id,
-            time:parseInt(Date.now() + (1*1000)),
-        };
-        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
-            if(err) console.log(err);
-        });
-        message.member.addRole(muteRolez);
+        message.channel.bulkDelete(1);
+        let role= message.guild.roles.find(r => r.name === 'Muted')
+        message.guild.member(author.user).addRole(role.id);
         logs.send(`${message.author}\n${message.content}`)
+        setTimeout(() => {
+                    message.guild.member(author.user).removeRole(role.id);
+        },5000)
         }
-}}})
+}})
 async function test1() {
     bot.channels.find(c => c.id === "578938585022201876").setName(`🌚Всего участников: ${bot.guilds.get('386108959049777152').members.size}`);
     bot.channels.find(c => c.id === "578938479283666972").setName(`👥Людей: ${bot.guilds.get('386108959049777152').members.filter(mem => !mem.user.bot === true).size}`);
