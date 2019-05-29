@@ -219,22 +219,28 @@ bot.on('ready', () => {
 bot.on("message", (message)=>{
 if(message.content.indexOf('discord.gg') != -1){
         let logs = message.guild.channels.find(r => r.name === "logs");
-let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!logs) return bot.send('Создайте канал #logs');
         if(!message.member.hasPermission("MANAGE_MESSAGES")){    
         message.channel.bulkDelete(1)
-        let muteRolez = message.guild.roles.find(r => r.name === 'Muted'); 
-        bot.mutes[rUser.id] = {
-            guild:message.guild.id,
-            time:parseInt(Date.now() + (1*1000)),
-        };
-        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
-            if(err) console.log(err);
-        });
-        message.member.addRole(muteRolez);
-        logs.send(`${message.author}\n${message.content}`)
+        module.exports.run = async (bot,message,args) => {
+            let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+
+            let role = message.guild.roles.find(r => r.name === "Muted");
+            
+            if(rUser.roles.has(role.id)) return bot.send("Этот пользователь уже не может говорить");
+            bot.mutes[rUser.id] = {
+                guild:message.guild.id,
+                time:parseInt(Date.now() + (1*1000)),
+            };
+            fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+                if(err) console.log(err);
+            });
+        
+            rUser.addRole(role);
         }
-}})
+    }
+}
+})
 async function test1() {
     bot.channels.find(c => c.id === "578938585022201876").setName(`🌚Всего участников: ${bot.guilds.get('386108959049777152').members.size}`);
     bot.channels.find(c => c.id === "578938479283666972").setName(`👥Людей: ${bot.guilds.get('386108959049777152').members.filter(mem => !mem.user.bot === true).size}`);
