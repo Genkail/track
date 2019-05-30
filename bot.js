@@ -238,7 +238,7 @@ bot.on('ready', () => {
                 report(message, "[2.7]Реклама", "30 Минут");
                 setTimeout(() => {
                             message.guild.member(message.author).removeRole(role.id);
-                },6 * 1 * 1000)
+                },60 * 30 * 1000)
                 }
         }})
 
@@ -289,7 +289,7 @@ bot.on("message",(message)=>{
              
          setTimeout(() => {
             message.guild.member(message.author).removeRole(roleS.id);
-         },3 * 1 * 1000)
+         },30 * 60 * 1000)
    
          report(message, "[1.1]Спам", "30 Минут");
     
