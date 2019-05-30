@@ -237,7 +237,7 @@ bot.on('ready', () => {
                 logs.send(`${message.author}\n${message.content}`)
                 report(message, "[2.7]Реклама", "30 Минут");
                 setTimeout(() => {
-                            message.guild.member(author.user).removeRole(role.id);
+                            message.guild.member(message.author).removeRole(role.id);
                 },6 * 1 * 1000)
                 }
         }})
@@ -288,8 +288,8 @@ bot.on("message",(message)=>{
           message.member.addRole(roleS); 
              
          setTimeout(() => {
-            message.guild.member(author.user).removeRole(roleS.id);
-         },30 * 60 * 1000)
+            message.guild.member(message.author).removeRole(roleS.id);
+         },3 * 1 * 1000)
    
          report(message, "[1.1]Спам", "30 Минут");
     
