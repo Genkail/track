@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     
     .setDescription("Крокодил это игра в которой ваша задача угадать что рисует другой игрок.\nСобираемся тут https://discord.gg/JsZUuGn ")
     .addField("Сайт для игры", cod)
-    .setImage("https://static.hentai-gifs.com/upload/20160529/15/28687/1.gif")
+    .setImage("https://3.bp.blogspot.com/-ZBLay50WF98/WIhTkfFP7mI/AAAAAAAACo4/GA9B-pb9m9YZGVA0V48Wa5VnRc6ygIjxgCLcB/s320/tumblr_njxklrgHRH1swwiquo1_500.gif")
 
 let rpchannel = message.guild.channels.find('name', '🎉ивенты')
 if(!rpchannel) return message.channel.send("Не удалось найти канал");
