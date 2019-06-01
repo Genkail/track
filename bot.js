@@ -248,7 +248,7 @@ bot.on('ready', () => {
                 report(message, "[2.7]Реклама", "30 Минут");
                  bot.mutes[message.author.id] = {
             guild:message.guild.id,
-            time:parseInt(Date.now() + (3 * 1000)),
+            time:parseInt(Date.now() + (30 * 60 * 1000)),
         };
         fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
             if(err) console.log(err);
@@ -303,7 +303,7 @@ bot.on("message",(message)=>{
              
          bot.mutes[message.author.id] = {
             guild:message.guild.id,
-            time:parseInt(Date.now() + (3 * 1000)),
+            time:parseInt(Date.now() + (30 * 60 * 1000)),
         };
         fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
             if(err) console.log(err);
