@@ -9,7 +9,7 @@ module.exports.run = async (bot,message,args) => {
     if(!args[0]) return bot.send("Вы не указали пользователя");
     if(!rUser) return bot.send("Пользователь не найден");
     if(!profile[rUser.id])return bot.send("Пользователя нету в profile.json");
-    if(profile[rUser.id]<=0) return bot.send("У пользователя 0 предупреждений");
+    if(profile[rUser.id].warns<=0) return bot.send("У пользователя 0 предупреждений");
     profile[rUser.id].warns--;
     fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
