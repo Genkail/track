@@ -18,7 +18,17 @@ fs.readdir('./cmds/',(err,files)=>{
         bot.commands.set(props.help.name,props);
     });
 });
-
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
 function report(message, reason, time) {
     let embed = new Discord.RichEmbed()
         .setColor('#800080')
