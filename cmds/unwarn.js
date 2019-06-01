@@ -5,7 +5,7 @@ module.exports.run = async (bot,message,args) => {
     try{
       
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("У вас нет прав");
-    let rUser = bot.rUser;
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!args[0]) return bot.send("Вы не указали пользователя");
     if(!rUser) return bot.send("Пользователь не найден");
     if(!profile[rUser.id])return bot.send("Пользователя нету в profile.json");

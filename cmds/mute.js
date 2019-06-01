@@ -5,7 +5,7 @@ module.exports.run = async (bot,message,args) => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!args[0]) return bot.send("Вы не указали пользователя");
     if(!rUser) return bot.send("Пользователь не найден");
-    if(!args[1]) return bot.send("Укажите время в секундах");
+    if(!argres[1]) return bot.send("Укажите время в секундах");
     let role = message.guild.roles.find(r => r.name === "Muted");
     if(!role){
         role = await message.guild.createRole({
