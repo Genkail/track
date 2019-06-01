@@ -4,7 +4,7 @@ bot.commands = new Discord.Collection();
 const fs = require('fs');
 bot.mutes = require('./mutes.json');
 let config = require('./botconfig.json');
-let token = config.token;
+
 let prefix = config.prefix;
 let profile = require('./profile.json');
 fs.readdir('./cmds/',(err,files)=>{
@@ -219,7 +219,7 @@ bot.on("message", (message)=>{
     }
 });
 
-bot.login(token);
+
 const activities_list = [
     "Разговоры посетителей",
     "Байку про клад",
@@ -309,4 +309,4 @@ bot.on("message",(message)=>{
 
 
 
- 
+ bot.login(process.env.TOKEN);
