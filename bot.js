@@ -292,12 +292,12 @@ bot.on("message",(message)=>{
   
 
   if(foo[message.author.id] == 3){
-    message.channel.send(`${message.author}, Прекратите спамить`).then(msg => msg.delete(15*1000));
+    message.channel.send(`${message.author}, Прекратите спамить`)
 
   }
   let roleS = message.guild.roles.find(r => r.name === "Muted");
   if(foo[message.author.id] == 6){
-    message.channel.bulkDelete(foo[message.author.id])
+    message.channel.bulkDelete(foo[message.author.id]+1)
           let role = message.guild.roles.find(r => r.name === "Muted");
           message.member.addRole(roleS); 
              
