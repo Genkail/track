@@ -23,7 +23,8 @@ module.exports.run = async (bot,message,args) => {
     .addField("Выдал предупреждение",`${rUser.user.username}`)
     .addField("Количество предупрежденией",`${profile[rUser.id].warns}/3`);
 
-    message.channel.send(embed);
+     let rpchannel = message.guild.channels.find('name', '🚫наказания')
+      rpchannel.send(embed)
     }catch(err){
         console.log(`1.${err.name}\n2.${err.message}\n3.${err.stack}`);
     }
