@@ -8,7 +8,7 @@ module.exports.run = async (bot,message,args) => {
     message.channel.bulkDelete(args[0]).then(() =>{
         message.channel.send(`Удалено ${args[0]} сообщений`).then(msg => msg.delete(15*1000));
     });
-    bot.send(botmessage);
+    
 }catch(err){
     console.log(err.name)
 }

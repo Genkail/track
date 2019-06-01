@@ -292,7 +292,7 @@ bot.on("message",(message)=>{
   
 
   if(foo[message.author.id] == 3){
-    message.channel.send(`${message.author}, Прекратите спамить`)
+    message.channel.send(`${message.author}, Прекратите спамить`).then(msg => msg.delete(15*1000));
 
   }
   let roleS = message.guild.roles.find(r => r.name === "Muted");
