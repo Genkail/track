@@ -246,9 +246,13 @@ bot.on('ready', () => {
                 message.guild.member(message.author).addRole(role.id);
                 logs.send(`${message.author}\n${message.content}`)
                 report(message, "[2.7]Реклама", "30 Минут");
-                setTimeout(() => {
-                            message.guild.member(message.author).removeRole(role.id);
-                },60 * 30 * 1000)
+                 bot.mutes[message.author.id] = {
+            guild:message.guild.id,
+            time:parseInt(Date.now() + (3 * 1000)),
+        };
+        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+            if(err) console.log(err);
+        });
                 }
         }})
 
@@ -297,10 +301,14 @@ bot.on("message",(message)=>{
           let role = message.guild.roles.find(r => r.name === "Muted");
           message.member.addRole(roleS); 
              
-         setTimeout(() => {
-            message.guild.member(message.author).removeRole(roleS.id);
-         },30 * 60 * 1000)
-   
+         bot.mutes[message.author.id] = {
+            guild:message.guild.id,
+            time:parseInt(Date.now() + (3 * 1000)),
+        };
+        fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+            if(err) console.log(err);
+        });
+    
          report(message, "[1.1]Спам", "30 Минут");
     
   }
