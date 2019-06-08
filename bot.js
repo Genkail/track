@@ -282,6 +282,7 @@ bot.on("message",(message)=>{
     let BotR = message.guild.roles.find(r => r.name === 'Бот');
     if(message.channel.id=="565164893867737144") return;
     if(message.channel.id=="496915902063837184") return;
+    if(message.author.id=="267967915855314944") return;
     if(message.member.roles.has(BotR.id))return;
     
     if(!foo[message.author.id]) { foo[message.author.id] = 0; }
