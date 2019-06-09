@@ -67,7 +67,7 @@ bot.on('ready', () => {
 
 });
 bot.on('guildMemberAdd',(member)=>{
-    let role = member.guild.roles.find(r => r.name === "Приезжий");
+    let role = member.guild.roles.find(r => r.name === "Заблудший Путник");
     member.addRole(role);
 });
 
