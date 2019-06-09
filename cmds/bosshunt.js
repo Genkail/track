@@ -1,6 +1,6 @@
 const db = require('quick.db'),
       ms = require('parse-ms');
-      Discord = require('Discord.js')
+      Discord = require('discord.js')
       const boss_list =  new Array ();
 
         boss_list[0] ="Бешеный клык";

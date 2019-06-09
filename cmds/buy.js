@@ -1,6 +1,6 @@
 const db = require('quick.db'),
       ms = require('parse-ms');
-      Discord = require('Discord.js')
+      Discord = require('discord.js')
 
       exports.run = async (bot, message, args, tools) => {
         const w_list =  new Array ();
