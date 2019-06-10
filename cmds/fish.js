@@ -50,6 +50,7 @@ let embed = new Discord.RichEmbed()
             let timeObj = ms(cooldown - (Date.now() - fishTime));
 
             message.channel.send(`Ты еще не отдохнул от рыбалки, подожди еще **${timeObj.hours}ч ${timeObj.minutes} м**`);
+          return;
 
         } else {message.channel.send(embed);
 
