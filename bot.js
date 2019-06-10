@@ -69,9 +69,9 @@ bot.on('ready', () => {
     },5000)
 
 });
-bot.on('guildMemberAdd',(member)=>{
+bot.on('guildMemberAdd',member=>{
 
-    member.addRole("483248047812509706");
+    member.addRole('483248047812509706');
 });
 
 bot.on('message', async message => {
