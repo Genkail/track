@@ -10,15 +10,15 @@ const db = require('quick.db'),
           }
           const fishlist = [
             "ты поймал окуня и получил",
-            "ты ничего не поймал",
+            "ты ничего не поймал, но потратил на дорогу",
             "ты поймал леща и получил",
-            "ты ничего не поймал",
+            "ты ничего не поймал, но потратил на дорогу",
             "ты поймал камбалу и получил",
-            "ты ничего не поймал",
+            "ты ничего не поймал, но потратил на дорогу",
             "ты нашел сундук в котором было",
-            "ты ничего не поймал",
+            "ты ничего не поймал, но потратил на дорогу",
             "ты поймал щуку и получил",
-            "ты ничего не поймал",
+            "ты ничего не поймал, но потратил на дорогу",
             ""
         ];
        
@@ -29,7 +29,7 @@ const db = require('quick.db'),
         amount = random(10, 200);
 if (fishlist[index] == "ты поймал окуня и получил") image = ("https://www.desktopbackground.org/t/2013/10/25/659754_wall-murals-and-borders-on-pinterest_736x547_h.jpg");
 if (fishlist[index] == "ты поймал леща и получил") image = ("https://i.pinimg.com/736x/61/30/27/613027d5dd126c65df121747af85c862.jpg");
-if (fishlist[index] == "ты ничего не поймал"){
+if (fishlist[index] == "ты ничего не поймал, но потратил на дорогу"){
     xps = 0;
     image = ("https://media.gettyimages.com/vectors/unhappy-fisherman-vector-id93172017?b=1&k=6&m=93172017&s=612x612&w=0&h=VNfIJ4kZFL8lhnDUfcT5k20psnuThrUPhGiitITdV3E=");
 };
@@ -57,7 +57,7 @@ let embed = new Discord.RichEmbed()
           
 
         db.set(`fish_${message.author.id}`, Date.now());
-        if (fishlist[index] == "ты ничего не поймал, но потратил на дорогу ") db.subtract(`user.balance_${message.author.id}`, amount);
+        if (fishlist[index] == "ты ничего не поймал, но потратил на дорогу") db.subtract(`user.balance_${message.author.id}`, amount);
            
         else db.add(`user.balance_${message.author.id}`, amount);
 

@@ -109,7 +109,7 @@ if (args[0] == boss_list[0]) {
     lossimage = ("https://slopeofhope.com/.a/6a00e0098982228833017d3c4b913a970c-800wi");
     xp = random(100, 500);
     money = random(200, 1000);
-    roleS = ("483248047812509706");
+    roleS = ("483248044981092352");
 };
 if (args[0] == boss_list[1]) {
     bh=boss_health[1];
@@ -119,7 +119,7 @@ if (args[0] == boss_list[1]) {
     lossimage = ("https://www.rpnation.com/gallery/1483083590125.25708/full?d=1491676904");
     xp = random(500, 1000);
     money = random(1000, 2000);
-    roleS = ("483248044981092352");
+    roleS = ("565531337725968387");
 
 };
 
@@ -131,7 +131,7 @@ if (args[0] == boss_list[2]) {
     lossimage = ("http://2.bp.blogspot.com/-cbUb9m1LJbY/UMIWaYzuvgI/AAAAAAAAAmA/y9xumEHWDms/s1600/FERALS11banner-1024x472.jpg");
     xp = random(1000, 1500);
     money =random(2000, 3000);
-    roleS = ("565531337725968387");
+    roleS = ("483248053009121280");
  
 };
 
@@ -144,7 +144,7 @@ if (args[0] == boss_list[4]) {
     lossimage = ("https://w-dog.ru/wallpapers/7/7/553451668670336.jpg");
     xp = random(2000, 2500);
     money = random(4000, 5000);
-    roleS = ("483248053009121280");
+    roleS = ("587294713565151263");
 
 
 };
