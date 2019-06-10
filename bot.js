@@ -51,8 +51,14 @@ bot.on('ready', () => {
             let guildid = bot.mutes[i].guild;
             let guild = bot.guilds.get(guildid);
             let member = guild.members.get(i);
+          if (!member) { 
+                delete bot.mutes[i];
+                fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
+                    if(err) console.log(err);
+                });}
             let muteRole = member.guild.roles.find(r => r.name === "Muted"); 
             if(!muteRole) continue;
+          
 
             if(Date.now()>= time){
                 member.removeRole(muteRole);
