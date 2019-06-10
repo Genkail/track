@@ -282,16 +282,16 @@ bot.on("message", (message)=>{
     
 var foo = {};
 bot.on("message",(message)=>{
-  uuser = message.author.id
+ 
  
     if(message.channel.id=="565164893867737144") return;
     if(message.channel.id=="496915902063837184") return;
     if(message.author.id=="267967915855314944") return;
-
-    if(message.uuser.roles.has("483246707740639251"))return;
+    if(message.author.id.roles.has("message.guild.members.get(message.author).roles.has"))
+      
     
     if(!foo[message.author.id]) { foo[message.author.id] = 0; }
-  if(!message.guild.uuser(message.author).roles.find(r => r.name == "Muted")){
+  if(!message.guild.member(message.author).roles.find(r => r.name == "Muted")){
     foo[message.author.id]++;
   setTimeout(()=>{
     foo[message.author.id]--;
@@ -306,7 +306,7 @@ bot.on("message",(message)=>{
   if(foo[message.author.id] == 6){
     message.channel.bulkDelete(foo[message.author.id]+1)
           let role = message.guild.roles.find(r => r.name === "Muted");
-          message.uuser.addRole(roleS); 
+          message.member.addRole(roleS); 
              
          bot.mutes[message.author.id] = {
             guild:message.guild.id,
