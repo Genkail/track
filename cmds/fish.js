@@ -42,9 +42,6 @@ let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle(`Во время рыбалки ${fishlist[index]} **${amount}**<:ros:512226123485020162>`)
     .setImage(image)
-
-
-
   
        let xp = await db.fetch(`xp_${message.author.id}`);  
         let fishTime = await db.fetch(`fish_${message.author.id}`);
@@ -60,7 +57,7 @@ let embed = new Discord.RichEmbed()
           
 
         db.set(`fish_${message.author.id}`, Date.now());
-        if (fishlist[index] == "ты ничего не поймал") 
+        if (fishlist[index] == "ты ничего не поймал, но потратил на дорогу ") db.subtract(`user.balance_${message.author.id}`, amount);
            
         else db.add(`user.balance_${message.author.id}`, amount);
 
