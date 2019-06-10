@@ -51,12 +51,9 @@ bot.on('ready', () => {
             let guildid = bot.mutes[i].guild;
             let guild = bot.guilds.get(guildid);
             let member = guild.members.get(i);
-          if (!member) { 
-                delete bot.mutes[i];
-                fs.writeFile('./mutes.json',JSON.stringify(bot.mutes),(err)=>{
-                    if(err) console.log(err);
-                });}
+             if (!member) continue;
             let muteRole = member.guild.roles.find(r => r.name === "Muted"); 
+
             if(!muteRole) continue;
           
 
@@ -73,8 +70,8 @@ bot.on('ready', () => {
 
 });
 bot.on('guildMemberAdd',(member)=>{
-    let role = member.guild.roles.find(r => r.name === "Заблудший Путник");
-    member.addRole(role);
+
+    member.addRole("483248047812509706");
 });
 
 bot.on('message', async message => {
@@ -271,9 +268,9 @@ async function test1() {
 
 bot.on("message", (message)=>{
  
-            let roleS = message.guild.roles.find(r => r.name === 'Участник ивентов');
+            
             if(message.content == "!роль") {
-                if(message.member.roles.has(roleS.id)){
+                if(message.member.roles.has("578944823302815745")){
                     message.member.removeRole('578944823302815745');
                     return message.channel.send(`У участника ${message.author} удалена роль <@&578944823302815745>`)
                 } 
