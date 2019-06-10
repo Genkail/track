@@ -19,6 +19,7 @@ if (args[1].replace(/\s/g, '').length === 0 || isNaN(args[1])) return bot.send('
 
     
     message.channel.send(`${message.author} передал  игроку ${rUser} **${args[1]}<:ros:512226123485020162>**`)
+    db.subtract(`user.balance_${message.author.id}`, args[1]);
     db.add(`user.balance_${rUser.id}`, args[1]);
 }
 
