@@ -51,6 +51,7 @@ bot.on('ready', () => {
             let guildid = bot.mutes[i].guild;
             let guild = bot.guilds.get(guildid);
             let member = guild.members.get(i);
+           if(!member) return;
             let muteRole = member.guild.roles.find(r => r.name === "Muted"); 
             if(!muteRole) continue;
 
