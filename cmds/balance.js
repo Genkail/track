@@ -9,7 +9,7 @@ exports.run = async (bot, message, args, tools) => {
 
     if (balance == null) balance = 0;
 
-    message.channel.send(`<@${user.id}> - Баланс : **${balance}<:ros:512226123485020162>**`)
+    message.channel.send(`<@${user.id}> - Баланс : **${Math.floor(balance)}**<:ros:512226123485020162>`)
 }
 
 module.exports.help = {
