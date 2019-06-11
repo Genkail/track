@@ -62,7 +62,7 @@ damage = damage * Boost;
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setTitle(user.tag)
-        .addField(`Баланс:`,`**${balance}**<:ros:512226123485020162>`)
+        .addField(`Баланс:`,`**${Math.floor(balance)}**<:ros:512226123485020162>`)
         .addField(`Оружие:`,`**${weapon}**`)
         .addField(`Урон:`,`**${Math.floor(damage)}**`)
         .addField(`Броня:`,`Скоро`)
