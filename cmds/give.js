@@ -12,7 +12,7 @@ exports.run = async (bot, message, args, tools) => {
     let balance = await db.fetch(`user.balance_${rUser.id}`);
     let authorbalance = await db.fetch(`user.balance_${message.author.id}`);
     if (args[1]> authorbalance) return bot.send("У вас недостаточно <:ros:512226123485020162>");
-    if (args[0] < 0) return bot.send ("Нельзя передавать число меньше 0");
+    if (args[1] < 0) return bot.send ("Нельзя передавать число меньше 0");
     if (message.author==rUser) return bot.send ("нельзя передавать самому себе!")
 
 if (args[1].replace(/\s/g, '').length === 0 || isNaN(args[1])) return bot.send('Укажите число!');
