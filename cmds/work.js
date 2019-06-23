@@ -19,7 +19,7 @@ const db = require('quick.db'),
 
         if (!args[0]) return bot.send ("Вы не указали работу");
        
-        let cooldown = 500; 
+        let cooldown = 0.18e+7; 
         if(!work_list.includes(args[0])) return bot.send("Работа не найдена");
         let xp = await db.fetch(`xp_${message.author.id}`); 
         

@@ -16,7 +16,7 @@ const db = require('quick.db'),
         } else {message.channel.send(`Ты успешно получил **${amount}**<:ros:512226123485020162>`);
 
         db.set(`lastDaily_${message.author.id}`, Date.now());
-        db.add(`user.balance_${message.author.id}`, 100);
+        db.add(`user.balance_${message.author.id}`, amount);
 
     }
       
