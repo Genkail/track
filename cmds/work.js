@@ -19,7 +19,7 @@ const db = require('quick.db'),
 
         if (!args[0]) return bot.send ("Вы не указали работу");
        
-        let cooldown = 0.18e+7; 
+        let cooldown = 0.36e+7; 
         if(!work_list.includes(args[0])) return bot.send("Работа не найдена");
         let xp = await db.fetch(`xp_${message.author.id}`); 
         
@@ -29,10 +29,10 @@ const db = require('quick.db'),
             if (level < 2) return bot.send("У вас недостаточный уровень для этой профессии")
 
             
-            min = (level * 50);
+            min = (level * 25);
             workname = ("сапожником");
             xps = 20
-            maxx = (level * 200);
+            maxx = (level * 100);
             amount = random (min, maxx);
             imagee = ('http://www.playcast.ru/uploads/2015/11/25/16027047.jpg');
 
@@ -42,9 +42,9 @@ const db = require('quick.db'),
             if (level < 5) return bot.send("У вас недостаточный уровень для этой профессии")
 
            workname =("мясником");
-            min = (level * 75);
+            min = (level * 30);
             xps = 40
-            maxx = (level * 300);
+            maxx = (level * 150);
             amount = random (min, maxx);
             imagee = ("https://cs12.pikabu.ru/post_img/2019/02/23/10/1550938895147190649.jpg");
             
@@ -55,8 +55,8 @@ const db = require('quick.db'),
             if (level < 10) return bot.send("У вас недостаточный уровень для этой профессии")
             xps = 80
             workname = ("кузнецом");
-            min = (level * 150);
-            maxx = (level * 600);
+            min = (level * 75);
+            maxx = (level * 300);
             amount = random (min, maxx);
             imagee = ('https://im0-tub-ru.yandex.net/i?id=5709935069e524042f990d94fa44e96c&n=13');
 
