@@ -153,7 +153,7 @@ const db = require('quick.db'),
           
           if (price > balance) return bot.send("У вас недостаточно средств");
           //покупка
-          if (price < balance) {
+          if (price <= balance) {
              db.subtract(`user.balance_${user.id}`, price);
              db.set(`user.weapon_${user.id}`, args[0]);
              bot.send(embed);
