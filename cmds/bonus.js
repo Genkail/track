@@ -4,7 +4,7 @@ const db = require('quick.db'),
       exports.run = async (bot, message, args, tools) => {
 
         let cooldown = 8.64e+7,
-        amount = 100;
+        amount = 500;
 
         let lastDaily = await db.fetch(`lastDaily_${message.author.id}`);
 
