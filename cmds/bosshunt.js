@@ -32,7 +32,7 @@ const db = require('quick.db'),
         let user = message.author;
         let weapon = await db.fetch(`user.weapon_${user.id}`);
         if (weapon == undefined) weapon = "Кулак";
-   
+   if(!args[0]) return bot.send("Вы не указали Босса");
 
 
         let cooldown = 8.64e+7;
