@@ -56,7 +56,7 @@ const db = require('quick.db'),
             xps = 80
             workname = ("кузнецом");
             min = (level * 75);
-            maxx = (level * 300);
+            maxx = (level * 150);
             amount = random (min, maxx);
             imagee = ('https://im0-tub-ru.yandex.net/i?id=5709935069e524042f990d94fa44e96c&n=13');
 
