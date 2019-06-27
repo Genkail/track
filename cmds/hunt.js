@@ -89,7 +89,7 @@ let embed = new Discord.RichEmbed()
 
 let level = await db.fetch(`lvl_${message.author.id}`);
 if (level == undefined ||level == 0 ||level == null) db.add(`lvl_${message.author.id}`, 1);
-if (xp + xps >= level * 50) { 
+if (xp + xps > level * 50) { 
     
      bot.send(`Игрок ${message.author} повысил свой уровень до ${level + 1}`);
    
