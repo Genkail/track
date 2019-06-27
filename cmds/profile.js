@@ -58,6 +58,7 @@ damage = damage * Boost;
      
      let xp = await db.fetch(`xp_${user.id}`);
      if (xp == undefined ||xp == null) xp = 0;
+  console.log(`${xp}o`);
 
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')

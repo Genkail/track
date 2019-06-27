@@ -2,10 +2,12 @@ const db = require('quick.db');
 const Discord = require('discord.js');
 
 exports.run = async (bot, message, args, tools) => {
-         let xp = await db.fetch(`xp_${message.author.id}`); 
-  let level = await db.fetch(`lvl_${message.author.id}`);
+
     let user = message.mentions.users.first() || message.author;
-        if (xp  >= (level * 50)) { 
+           let xp = await db.fetch(`xp_${user.id}`); 
+  let level = await db.fetch(`lvl_${user.id}`);
+  console.log(xp);
+        if (xp >= level * 50) { 
     
             bot.send(`Игрок ${message.author} повысил свой уровень до ${level + 1}`);
           
