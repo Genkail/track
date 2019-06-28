@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const db = require('quick.db');
 bot.commands = new Discord.Collection();
 const fs = require('fs');
 bot.mutes = require('./mutes.json');
 let config = require('./botconfig.json');
+
 
 let prefix = config.prefix;
 let profile = require('./profile.json');
@@ -38,7 +40,54 @@ function report(message, reason, time) {
         .addField("Время мута", time);
         let rpchannel = message.guild.channels.find('name', '🚫наказания')
         rpchannel.send(embed)
-    }
+    };
+const usersInVoiceChannels = new Discord.Collection();
+
+const isAFKChannel = channel => channel.guild.afkChannelID === channel.id
+const calculateOnline = id =>  {
+    const user = usersInVoiceChannels.get(id);
+
+    let profileE =  db.fetch(`voicetime_${id}`);
+
+    if(!profileE) {
+        profileE = 0;
+        db.add(`voicetime_${id}`, 0);
+    };
+  const now = Date.now();
+  const seconds = (now - user.time) / 1e3;
+  const minutes = Math.floor(seconds / 60) % 60;
+    if (minutes > 0) {
+    db.add(`voicetime_${id}`,(1 * minutes));
+    };
+console.log(id);
+ KKAA = db.fetch(`voicetime_${id}`);
+
+sssss = ("587222469660901412");
+
+console.log(KKAA);
+
+console.log(`userR = ${id}`);
+if (15 <= KKAA)  bot.guilds.first().member(id).addRole(sssss);//coals
+if (30 <= KKAA)  bot.guilds.first().member(id).addRole('587196847471198209');//bronze
+if (60 <= KKAA)  bot.guilds.first().member(id).addRole('587196673499856897');//silver
+if (120 <= KKAA)  bot.guilds.first().member(id).addRole('587196586161864715');//gold
+if (240 <= KKAA)  bot.guilds.first().member(id).addRole('587196263150387200');//platinum
+if (480 <= KKAA)  bot.guilds.first().member(id).addRole('587223457259978764');//quartz
+if (960 <= KKAA)  bot.guilds.first().member(id).addRole('587223295427084296');//granet
+if (1920 <= KKAA)  bot.guilds.first().member(id).addRole('587223038064459777');//topaz
+if (3840 <= KKAA)  bot.guilds.first().member(id).addRole('587222937732382720');//aquamarine
+if (7680 <= KKAA)  bot.guilds.first().member(id).addRole('587195483521548288');//ametist
+if (15360 <= KKAA)  bot.guilds.first().member(id).addRole('587195922036031513');//crystal
+if (30720 <= KKAA)  bot.guilds.first().member(id).addRole('587195188179632149');//pearl
+if (61400 <= KKAA)  bot.guilds.first().member(id).addRole('587195080184561694');//saphire
+if (122880 <= KKAA)  bot.guilds.first().member(id).addRole('587194772343619584');//ruby
+if (245760 <= KKAA)  bot.guilds.first().member(id).addRole('587194403794452512');//Emerald
+if (491520 <= KKAA)  bot.guilds.first().member(id).addRole('587194101875605505');//ametist
+
+
+
+
+};
 
 bot.on('ready', () => {
     console.log(`Запустился бот ${bot.user.username}`);
@@ -67,8 +116,63 @@ bot.on('ready', () => {
         }
 
     },5000)
+  const guild = bot.guilds.first()
+
+    const channels = guild.channels
+      .filter(channel => channel.type === 'voice' && !isAFKChannel(channel))
+      .array()
+  
+    for (const channel of channels) {
+      const members = channel.members.array()
+      console.log(members)
+  
+      for (const member of members) {
+        if (!member.user.bot) {
+          usersInVoiceChannels.set(member.id, {
+            time: Date.now()
+          })
+        }
+      }
+    }
+});
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  
+    
+    
+    const oldChannel = oldMember.voiceChannel
+    const newChannel = newMember.voiceChannel
+    const { id, user } = oldMember || newMember
+  
+  
+    if (user.bot) {
+      return
+    }
+  
+    if (oldChannel && !newChannel) {
+      console.log("calculate")
+  
+      calculateOnline(id)
+      usersInVoiceChannels.delete(id)
+  
+    } else if (newChannel && !oldChannel) {
+      console.log("exit")
+      usersInVoiceChannels.set(id, {
+        time: Date.now()
+      })
+      
+    } else if (oldChannel && !isAFKChannel(newChannel)) {
+      console.log("AFK")
+  
+      calculateOnline(id)
+      usersInVoiceChannels.delete(id)
+      usersInVoiceChannels.set(id, {
+        time: Date.now()
+      })
+    }
+
 
 });
+
 bot.on('guildMemberAdd',member=>{
 
     member.addRole('483248047812509706');
