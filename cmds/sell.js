@@ -34,8 +34,8 @@ const db = require('quick.db'),
           w_price[9] = "11500";
           w_price[10] = "13750";
           w_price[11] = "16000";
-          w_price[12] = "16000";
-          w_price[13] = "18500";
+          w_price[12] = "18500";
+          w_price[13] = "22750";
           w_price[14] = "25000";
           w_price[15] = "33750";
 
