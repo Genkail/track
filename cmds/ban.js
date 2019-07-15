@@ -1,3 +1,4 @@
+
 const Discord = module.require("discord.js");
 const fs = require("fs");
 let profile = require("../profile.json");
@@ -5,9 +6,8 @@ module.exports.run = async (bot,message,args) => {
     try{
       
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("У вас нет прав");
-    let rUser = bot.rUser;
-    if(!args[0]) return bot.send("Вы не указали пользователя");
-    if(!rUser) return bot.send("Пользователь не найден");
+    let rUser = message.mentions.members.first();;
+    if(!rUser) return message.channel.send("Вы не указали пользователя");
     let embed = new Discord.RichEmbed()
     .setDescription("Бан")
     .setColor('#e22216')
@@ -23,4 +23,4 @@ module.exports.run = async (bot,message,args) => {
 };
 module.exports.help = {
     name: "ban"
-};
+}
