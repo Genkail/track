@@ -92,11 +92,14 @@ bot.on('presenceUpdate',(oldMember, newMember)=>{
     let games = [ {roleid: '518790778948943876', name: 'Counter-Strike: Global Offensive'}, {roleid: '513991352262852628', name: 'DOTA 2'}, {roleid: '518791050911940618', name: 'Minecraft'}, {roleid: '518791565855031297', name: "PlayerUnknown's Battlegrounds"}, {roleid: '518791802342342666', name: "Garry's mod"}, {roleid: '527787390371364874', name: 'Terraria'}, {roleid: '527786787830235147', name: 'Warface'}, {roleid: '533916595559596032', name: 'Fortnite'}, {roleid: '604332149885239375', name: 'Grand Theft Auto V'}, {roleid: '604332673271332894', name: 'Rust'}, {roleid: '604335619862429709', name: "Tom Clancy's Rainbow Six Siege"}, {roleid: '604335787882053642', name: "Portal 2"} ]
 let a = games.find(game => game.name == newMember.presence.game);
 if (a) {
-if(newMember.has(a.roleid)) return;
+if(newMember.roles.has(a.roleid)) return;
     newMember.addRole(a.roleid);
 }
-})
-
+});
+    bot.on("voiceStateUpdate",(oldMember,newMember)=>{
+        createPrivateRoom = require("./Room.js");
+        createPrivateRoom(oldMember,newMember)
+    });
 bot.on('ready', () => {
     console.log(`Запустился бот ${bot.user.username}`);
     bot.generateInvite(["ADMINISTRATOR"]).then(link =>{
