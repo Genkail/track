@@ -88,6 +88,14 @@ if (491520 <= KKAA)  bot.guilds.first().member(id).addRole('587194101875605505')
 
 
 };
+bot.on('presenceUpdate',(oldMember, newMember)=>{
+    let games = [ {roleid: '518790778948943876', name: 'Counter-Strike: Global Offensive'}, {roleid: '513991352262852628', name: 'DOTA 2'}, {roleid: '518791050911940618', name: 'Minecraft'}, {roleid: '518791565855031297', name: "PlayerUnknown's Battlegrounds"}, {roleid: '518791802342342666', name: "Garry's mod"}, {roleid: '527787390371364874', name: 'Terraria'}, {roleid: '527786787830235147', name: 'Warface'}, {roleid: '533916595559596032', name: 'Fortnite'}, {roleid: '604332149885239375', name: 'Grand Theft Auto V'}, {roleid: '604332673271332894', name: 'Rust'}, {roleid: '604335619862429709', name: "Tom Clancy's Rainbow Six Siege"}, {roleid: '604335787882053642', name: "Portal 2"} ]
+let a = games.find(game => game.name == newMember.presence.game);
+if (a) {
+if(newMember.has(a.roleid)) return;
+    newMember.addRole(a.roleid);
+}
+})
 
 bot.on('ready', () => {
     console.log(`Запустился бот ${bot.user.username}`);
@@ -217,114 +225,7 @@ bot.on('message', async message => {
     bot.rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     bot.uId = message.author.id;
 });
-bot.on("message", (message)=>{
-    if(message.content == "!c") {
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        
-        .setColor('#00b2ff')
-    
-    
-        .setTitle('**ПРАВИЛА ЧАТОВ**')
-        .setDescription("<#497721969538498581> - Используется *исключительно* для заявок! любая другая информация будет расцениваться как нарушение\n<#386108959049777155> - Используется для общения, в данном чате __**запрещены**__ фото содержащие мат, оскорбления , рекламу. Так же запрещены изображения не несущие смысловой нагрузки\n **__P.S Не доводите до абсурда__**\n<#565164893867737144> - Сюда скидывается различный мусор **не** противоречащий общим правилам.\n<#497619442885328896>  - Используется строго для взаимодействия с муз.ботами: Диджей`префикс ?` и Бард`префикс +`\n<#578819905235845140> - сюда скидываются различные мероприятия сервера.(напишите `!роль`что бы не пропускать)")        
-        .setTimestamp()
-        .setFooter('правила всегда можно дополнить!');
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!rofl") { 
 
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        .setColor('#00ff19')
-        
-        .setTitle('**ПРАВИЛА РОФЛТУРИКОВ**')
-    
-        .setDescription("```ini\n[1] Выбывание из турнира после 2 поражений \n[2] Количество игр на этапах : \n[Тур 1, Тур 2] - Best of 1; \n[Полуфинал] - Best of 3; \n[Финал] - Best of 5. \n[3] Карты участвующие в драфте: Mirage, Dust 2, Inferno, Train, Nuke, Overpass, Cache\n[4] Турнир не может продолжатся дольше  двух недель.\n[5] Игрок может попросить паузу до 5 минут (если он просил паузу на 3 минуты то потом может попросить еще на 2)\n[6] Игрок может попросить перенести матч (максимум за час) по [уважительной причине]\n[7] Взносы не возвращаются (кроме случая когда турнир не могут провести) \n[8] - Если вам нужна пауза пишем в чат об этом (пример : !p, pause, pauza,!pause) [Обязательно на английском, или транслитом]\n```\n__**ПО ВСЕМ ВОПРОСАМ :**__ В группу вк либо в лс <@267967915855314944> либо <@305585850375208960>\n")        
-        .setTimestamp()
-        .setFooter('правила всегда можно дополнить!');
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!pravila") {
-    const exampleEmbed = new Discord.RichEmbed()
-    
-        .setColor('#36393E')
-        .setImage('https://i.imgur.com/JGI5iQo.jpg')
-        
-        
-    
-    
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!pravo") {
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        .setColor('RANDOM')
-        
-        .setTitle('**ОБЩИЕ ПРАВИЛА**')
-    
-        .setDescription("**__Правила действующие на все каналы кроме <#565164893867737144>__**\n```ini\n[1.1] запрещен флуд/спам\n[1.2] запрещен Капс(от 3 слов)\n```\n **__Правила действующие на все каналы__**\n```ini\n[2.1] Запрещены оскорбления [в любом виде]\n[2.2] запрещено публично обсуждать действия модерации/администрации\n[2.3] запрещено использовать символику\n[2.4] запрещено использовать изображения шокирующиего содержания\n[2.5] запрещена реклама\n[2.6] Запрещен деанон(раскрытие личных данный человека без его согласия)\n[2.7] запрещено нарушать правила чатов\n[Нарушители будут наказаны!]\n```\n**Полный** список наказаний вы можете посмотреть написав `!nakaz`\n ")        
-        .setTimestamp()
-        .setFooter('Если вы видите что игрок нарушает правила, отправте на него жалобу `!report`!');
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!modhelp") {
-if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ты не бармен, так что нельзя");
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        .setColor('RANDOM')
-        
-        .setTitle('**СПРАВКА ДЛЯ МОДЕРАЦИИ**')
-    
-        .setDescription("```ini\n[тут должна быть фраза про ответственность... но ее не будет :D]\n```\n**__КОМАНДЫ__**\n```ini\n[!warn ник игрока] - выдает предупреждение игроку (P.S 3 предупреждения - автокик)\n [!kick ник игрока] - Кикает игрока\n [!mute ник игрока n] - выдает мут(P.S где n - время мута в секундах)\n [!say] - сказать от имени бота\n[!clear n] удалить n ое кол-во сообщений\n```")
-        
-        .setTimestamp()
-        .setFooter('функции warn и kick недоступны во время испытательного периода!, чтобы снять mute или warn добавь un (unwarn, unmute)');
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!nakaz") {
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        .setColor('#d400ff')
-        
-        .setTitle('**НАКАЗАНИЯ**')
-    
-        .setDescription("при __первом__ нарушении устное предупреждение **не путать с warn**```ini\n[1.1] Мут до 30 минут\n[1.2] Мут 30 минут\n[2.1] Мут до 120 минут\n[2.2] мут до 30 минут\n[2.3] удаление сообщения, мут до 60 минут, варн(на усмотрение администрации)\n[2.4] удаления сообщения, мут до 120 минут, варн(на усмотрение администрации)\n[2.5] мут(выдает бот)\n[2.6] [без предупреждения]мут до 1 суток, варн\n[2.7] мут до 120 минут\n```")        
-        .setTimestamp()
-        .setFooter('правила всегда можно дополнить!');
-     message.channel.send(exampleEmbed);
-    }
-});
-bot.on("message", (message)=>{
-    if(message.content == "!chavo") {
-    const exampleEmbed = new Discord.RichEmbed()
-        
-        
-        .setColor('RANDOM')
-        
-        .setTitle('**ЧАВО**')
-    
-        .setDescription("**Когда следующий турнир?**  **=>**  *Мы не планируем проводить турниры пока не найдем дедик(P.S дедик это удаленный сервер)*\n\n**Почему нет голосовых каналов для игр?**  **=>**  *Что бы открыть игровой канал - нажми на реакцию с нужной игрой(в сообщении ниже)*\n\n**Как пригласить Трактирщика к себе на сервер?**  **=>** *Никак, это личный бот*\n\n**Как получить роль Бармена/Тестера?**  **=>**  *На данный момент набор не проводится.*\n\n**Как получить роль ANIME SQUAD/GG МЫ ПРОЕБАЛИ?**  **=>**  *Оформить заявку(оформлять здесь <#497721969538498581> по образцу в закрепленном сообщении)*\n\n**Как получить роль ФЕМКИ?**  **=>**  *Данная роль выдается сугубо девушкам*\n\n**За что меня замутили?**  **=>**  *Причину мута можешь найти здесь* <#576766119071842305>\n\n**Как получить роль постоянного посетителя/поваренка?**  **=>**  *Проявлять активность*\n\nЕсли у тебя еще остались вопросы, обращатся к <@267967915855314944>")        
-        .setTimestamp()
-        .setTimestamp()
-        .setFooter('Просьба перед тем как спрашивать, еще раз пробежатся по списку!');
-     message.channel.send(exampleEmbed);
-    }
-});
 
 
 const activities_list = [
