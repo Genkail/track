@@ -2,6 +2,8 @@ dependencies:
   discord.js: 11.5.1
   express: 4.17.1
   moment: 2.24.0
+  moment-duration-format: 2.3.2
+  ms: 2.1.2
   parse-ms: 2.1.0
   quick.db: 7.0.0-b22
 packages:
@@ -22,14 +24,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
-  /better-sqlite3/5.4.0:
+  /better-sqlite3/5.4.1:
     dependencies:
       integer: 2.1.0
       tar: 4.4.10
     dev: false
     requiresBuild: true
     resolution:
-      integrity: sha512-Uj1ZYOcq1GtFyFgJgqMVDoDLTy1B1pM9+bULnlX8szRX4cPjE/7JbKxCzQGhYlZlLkHQvtXXhCZ3skqsQ2byMA==
+      integrity: sha512-uFIjBdnSbzZT8NEqgH1IuARJaA4wtbJ2VmM/ibxlkY+9a0Z8dlyJZBBeKTg2l8L8fPvfpXearuZbjtr+5x8MiA==
   /body-parser/1.19.0:
     dependencies:
       bytes: 3.1.0
@@ -53,10 +55,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
-  /chownr/1.1.1:
+  /chownr/1.1.2:
     dev: false
     resolution:
-      integrity: sha512-j38EvO5+LHX84jlo6h4UzmOwi0UgW61WRyPtJz4qaadK5eY3BTS5TY/S1Stc3Uk2lIM6TPevAlULiEJwie860g==
+      integrity: sha512-GkfeAQh+QNy3wquu9oIZr6SS5x7wGdSgNQvD10X3r+AZr1Oys22HW8kAmDMvNg2+Dm0TeGaEuO8gFwdBXxwO8A==
   /content-disposition/0.5.3:
     dependencies:
       safe-buffer: 5.1.2
@@ -218,6 +220,18 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-uUQBt3H/cSIVfch6i1EuPNy/YsRSOUBXTVfZ+yR7Zjez3qjBz6i9+i4zjNaoqcoFVI4lQJ5plg63TvGfRSDCRg==
+  /http-errors/1.7.3:
+    dependencies:
+      depd: 1.1.2
+      inherits: 2.0.4
+      setprototypeof: 1.1.1
+      statuses: 1.5.0
+      toidentifier: 1.0.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-ZTTX0MWrsQ2ZAhA1cejAwDLycFsd7I7nVtnkT3Ol0aqodaKW+0CTZDQ1uBv5whptCnc8e8HeRRJxRs0kmm/Qfw==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -230,6 +244,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
+  /inherits/2.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
   /integer/2.1.0:
     dev: false
     requiresBuild: true
@@ -300,7 +318,7 @@ packages:
       integrity: sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
   /minipass/2.3.5:
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.0
       yallist: 3.0.3
     dev: false
     resolution:
@@ -318,6 +336,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+  /moment-duration-format/2.3.2:
+    dev: false
+    resolution:
+      integrity: sha512-cBMXjSW+fjOb4tyaVHuaVE/A5TqkukDWiOfxxAjY+PEqmmBQlLwn+8OzwPiG3brouXKY5Un4pBjAeB6UToXHaQ==
   /moment/2.24.0:
     dev: false
     resolution:
@@ -330,6 +352,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
+  /ms/2.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
   /negotiator/0.6.2:
     dev: false
     engines:
@@ -381,7 +407,7 @@ packages:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
   /quick.db/7.0.0-b22:
     dependencies:
-      better-sqlite3: 5.4.0
+      better-sqlite3: 5.4.1
       lodash.get: 4.4.2
       lodash.set: 4.3.2
       lodash.unset: 4.5.2
@@ -409,6 +435,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
+  /safe-buffer/5.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
   /safer-buffer/2.1.2:
     dev: false
     resolution:
@@ -422,7 +452,7 @@ packages:
       escape-html: 1.0.3
       etag: 1.8.1
       fresh: 0.5.2
-      http-errors: 1.7.2
+      http-errors: 1.7.3
       mime: 1.6.0
       ms: 2.1.1
       on-finished: 2.3.0
@@ -461,12 +491,12 @@ packages:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
   /tar/4.4.10:
     dependencies:
-      chownr: 1.1.1
+      chownr: 1.1.2
       fs-minipass: 1.2.6
       minipass: 2.3.5
       minizlib: 1.2.1
       mkdirp: 0.5.1
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.0
       yallist: 3.0.3
     dev: false
     engines:
@@ -527,5 +557,7 @@ specifiers:
   discord.js: ^11.5.1
   express: ^4.17.1
   moment: ^2.24.0
+  moment-duration-format: ^2.3.2
+  ms: ^2.1.2
   parse-ms: ^2.1.0
   quick.db: ^7.0.0-b22
