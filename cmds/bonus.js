@@ -4,7 +4,7 @@ const db = require('quick.db'),
       exports.run = async (bot, message, args, tools) => {
 
         let cooldown = 8.64e+7,
-        amount = 500;
+        amount = 100;
 
         let lastDaily = await db.fetch(`lastDaily_${message.author.id}`);
 
@@ -16,7 +16,7 @@ const db = require('quick.db'),
         } else {message.channel.send(`Ты успешно получил **${amount}**<:ros:512226123485020162>`);
 
         db.set(`lastDaily_${message.author.id}`, Date.now());
-        db.add(`user.balance_${message.author.id}`, amount);
+        db.add(`user.balance_${message.author.id}`, 100);
 
     }
       
