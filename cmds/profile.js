@@ -64,9 +64,9 @@ damage = damage * Boost;
         .setColor('RANDOM')
         .setTitle(user.tag)
         .addField(`Баланс:`,`**${Math.floor(balance)}**<:ros:512226123485020162>`)
-        .addField(`Оружие:`,`**${weapon}**`)
+        .addField(`Оружие:`,`**${weapon}**`),true
         .addField(`Урон:`,`**${Math.floor(damage)}**`)
-        .addField(`Броня:`,`Скоро`)
+        .addField(`Броня:`,`Рванье`)
 
         .addField(`Уровень:`,`**${level}**`)
         .addField(`Прогресс уровня:`,`**${xp}/${level * 50}**` )
