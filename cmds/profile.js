@@ -64,16 +64,17 @@ damage = damage * Boost;
         .setColor('RANDOM')
         .setTitle(user.tag)
         .addField(`Баланс:`,`**${Math.floor(balance)}**<:ros:512226123485020162>`)
-        .addField(`Оружие:`,`**${weapon}**`),true
-        .addField(`Урон:`,`**${Math.floor(damage)}**`)
-        .addField(`Броня:`,`Рванье`)
+        .addField(`Оружие:`,`**${weapon}**`,true)
+        .addField(`Урон:`,`**${Math.floor(damage)}**`,true)
+        .addField(`Броня:`,`**Рванье**`,true)
+        .addField(`Очки брони:`,`**0**`,true)
 
-        .addField(`Уровень:`,`**${level}**`)
-        .addField(`Прогресс уровня:`,`**${xp}/${level * 50}**` )
+        .addField(`Уровень:`,`**${level}**`,true)
+        .addField(`Прогресс уровня:`,`**${xp}/${level * 50}**` ,true)
         .addField(`Свободные очки уровня:`, `**${point}**`)
-        .addField(`Здоровье:`, `**${Health}**` )
-        .addField(`Физическая сила:`, `**${Math.floor(fizdamage * 100)}**`)
-        .addField(`Меткость:`, `**${Math.floor(Marksmanship * 100)}**`)
+        .addField(`Здоровье:`, `**${Health}**`,true )
+        .addField(`Физическая сила:`, `**${Math.floor(fizdamage * 100)}**`,true)
+        .addField(`Меткость:`, `**${Math.floor(Marksmanship * 100)}**`,true)
         .setThumbnail(user.displayAvatarURL)
         
         message.channel.send(embed);
