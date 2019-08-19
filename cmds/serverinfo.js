@@ -7,8 +7,8 @@ module.exports.run = async (bot,message,args) => {
     .addField("Название сервера",message.guild.name,true)
     .addField("Создатель сервера",message.owner.username,true)
     .addField("Количество ролей",message.guild.roles.size,true)
-    .addField("Количество ролей",message.guild.roles.size,true)
-    .addField("Кол-Во участников",message.guild.memberCount)
+    .addField("Количество ролей",message.guild.emojis.size,true)
+    .addField(`Кол-Во участников :${message.guild.memberCount}`,`>>> Людей: ${message.guild.members.filter(mem => !mem.user.bot).size}\nБотов:${message.guild.members.filter(mem => !mem.user.bot).size}\nОнлайн:${message.guild.members.filter(m => m.presence.status === "online").size}\n `)
     .addField("Регион",message.guild.region)
     .setThumbnail(message.guild.iconURL)
 
