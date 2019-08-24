@@ -60,9 +60,9 @@ const calculateOnline = id =>  {
     db.add(`voicetime_${id}`,(1 * minutes));
     };
 console.log(id);
- KKAA = db.fetch(`voicetime_${id}`);
+let KKAA = db.fetch(`voicetime_${id}`);
 
-sssss = ("587222469660901412");
+let sssss = ("587222469660901412");
 
 console.log(KKAA);
 
@@ -96,10 +96,7 @@ if(newMember.roles.has(a.roleid)) return;
     newMember.addRole(a.roleid);
 }
 });
-    bot.on("voiceStateUpdate",(oldMember,newMember)=>{
-        createPrivateRoom = require("./Room.js");
-        createPrivateRoom(oldMember,newMember)
-    });
+
 bot.on('ready', () => {
     console.log(`Запустился бот ${bot.user.username}`);
     bot.generateInvite(["ADMINISTRATOR"]).then(link =>{
