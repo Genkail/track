@@ -36,7 +36,7 @@ exports.run = async (bot, message, args) => {
     message.channel.send(`**Укажите ставку**$`)
   } else {
     let sff = args[0]
-    if (sff < 49) {
+    if (sff < 50) {
       message.channel.sendMessage("Ошибка! Твоя ставка меньше **50**!");
     } else {
       if (!sff < 49) {
