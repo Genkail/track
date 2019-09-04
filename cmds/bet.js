@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
-const db = require('quick.db')
- 
- 
+const db = require('quick.db') 
 var sffr = [
   "0",
   "0",
