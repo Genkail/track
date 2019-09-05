@@ -271,19 +271,6 @@ async function test1() {
     bot.channels.find(c => c.id === "578938430994513921").setName(`🌝В сети: ${bot.guilds.get('386108959049777152').presences.size}`);
 }; setInterval(test1, 30000)
 
-bot.on("message", (message)=>{
- 
-            
-            if(message.content == "!роль") {
-                if(message.member.roles.has("578944823302815745")){
-                    message.member.removeRole('578944823302815745');
-                    return message.channel.send(`У участника ${message.author} удалена роль <@&578944823302815745>`)
-                } 
-            
-            message.member.addRole(roleS);
-            message.channel.send(`Участнику ${message.author} Выдана роль <@&578944823302815745>`)
-           
-    }})
     
 var foo = {};
 bot.on("message",(message)=>{
